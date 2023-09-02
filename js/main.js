@@ -1,4 +1,4 @@
-
+/*
 const tarifaDiaria = 10000;
 const temporadaAlta = 15000;
 
@@ -130,7 +130,7 @@ while (eleccion != "") {
     }
     eleccion = prompt("Escriba el nombre de la habitacion a consultar: fiona, summer, winter o mantis (o presione enter para continuar");
 }
-
+*/
 const comida = [
     { nombre: "Pizza Muzzarela", aptoCeliaco: false },
     { nombre: "Pizza Napolitana", aptoCeliaco: false },
@@ -138,7 +138,7 @@ const comida = [
     { nombre: "Spaghetti a la bolognesa", aptoCeliaco: false },
     { nombre: "Hamburguesas de arvejas con queso en pan sin tacc", aptoCeliaco: true },
 ];
-
+/*
 
 const filtrados = comida.filter((item) => item.aptoCeliaco === true);
 
@@ -152,5 +152,35 @@ if (consulta == "si") {
 } else if (consulta == "no" || consulta !="") {
     alert("Contamos con un menu variado de opciones.");
 }
+*/
+/*DOC Y EVENTOS*/
+const habitaciones = [
+  { Habitacion: 1, nombre: "fiona", precio: 500 },
+  { Habitacion: 2, nombre: "summer", precio: 900 },
+  { Habitacion: 3, nombre: "winter", precio: 1200 },
+  { Habitacion: 4, nombre: "mantis", precio: 1600 },
+  { Habitacion: 5, nombre: "west", precio: 2000 },
+];
 
+habitaciones.forEach((item) => {
+  let div = document.createElement("div");
+  div.innerHTML = `
+  <h2>Habitacion: ${item.Habitacion}</h2>
+  <img>
+    <p>Nombre: ${item.nombre}</p>
+    <b>$${item.precio}</b>`;
+  contenedor.append(div);
+});
 
+let boton = document.getElementById("boton");
+boton.addEventListener("click", () => {
+    console.log("click");
+});
+/* localStorage */
+localStorage.setItem("alquilerDeAuto", true);
+let alquiler = localStorage.getItem("alquilerDeAuto");
+console.log(alquiler);
+
+localStorage.setItem("huespedes", 8);
+let personas = localStorage.getItem("huespedes");
+console.log(JSON.parse(personas));
